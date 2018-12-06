@@ -1,0 +1,24 @@
+---
+- hosts: nodes
+  tasks:
+   - name: install ngnix on {{ ansible_distribution}} based machine
+     package:
+         name: nginx
+         state: present
+   - name: update nginix config
+     copy:
+        src: default
+        dest: /etc/nginx/sites-available/default
+     notify:
+        - restart nginx
+   - name: update the index file
+     copy:
+       content: "<h1> welcome to capgemini </h1>"
+       dest: /var/www/html/index.html
+
+  handlers:
+   - name: restart nginx
+     service:
+         name: nginx
+         state: restarted
+    

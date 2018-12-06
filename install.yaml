@@ -9,8 +9,8 @@
     - name: starting the service
       service:
         name: apache2
-        state: started
-        enabled: true
+        state: stopped
+        enabled: false
     - name: create html file
       copy:
         content: "<h1> welcome to capgemini </h1>"
