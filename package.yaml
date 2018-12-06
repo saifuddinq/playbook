@@ -1,0 +1,9 @@
+---
+- hosts: nodes
+  tasks: 	
+    - name: install a package nginx
+      apt:
+        
+        name: nginx
+        state: present
+        

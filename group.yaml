@@ -1,0 +1,7 @@
+---
+- hosts: nodes
+  tasks: 	
+    - name: create s user named capgemini
+      group:
+        name: training
+        state: present 	

@@ -1,0 +1,8 @@
+---
+- hosts: nodes
+  tasks: 	
+    - name: touch a empty file
+      file:
+        path: /home/ubuntu/train
+        state: directory
+        
